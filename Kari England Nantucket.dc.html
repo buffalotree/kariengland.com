@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #FBF7EE; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+  * { box-sizing: border-box; }
+  .ke-navlink { color: #4A5A58; text-decoration: none; transition: color .2s; }
+  .ke-navlink:hover { color: #243534; }
+  .ke-btn-primary { transition: background .2s, transform .2s, box-shadow .2s; box-shadow: 0 4px 14px rgba(221,106,78,.20); }
+  .ke-btn-primary:hover { background: #C4543B !important; transform: translateY(-1px); box-shadow: 0 8px 22px rgba(221,106,78,.28); }
+  .ke-btn-ghost:hover { background: rgba(94,140,153,.10) !important; }
+  .ke-card-img { transition: transform .4s cubic-bezier(.2,.7,.3,1); }
+  .ke-card-img:hover { transform: translateY(-6px); }
+  input:focus { box-shadow: 0 0 0 3px rgba(221,106,78,.26); }
+  .ke-img { display: block; width: 100%; height: 100%; object-fit: cover; }
+  /* nav links hide on narrow; logo + Follow always show */
+  @media (max-width: 720px) { .ke-nav-links { display: none !important; } }
+</style>
+</helmet>
+
+<div style="width:100%; max-width:100%; overflow-x:hidden; font-family:'Hanken Grotesk',sans-serif; color:#243534;">
+
+  <!-- ===== STICKY HEADER ===== -->
+  <header style="position:sticky; top:0; z-index:50; display:flex; align-items:center; justify-content:space-between; gap:16px; padding:16px clamp(20px,5vw,56px); background:rgba(251,247,238,.88); backdrop-filter:blur(10px); border-bottom:1px solid rgba(36,53,52,.08);">
+    <a href="#top" style="text-decoration:none; line-height:1;">
+      <div style="font-family:'Cormorant Garamond',serif; font-weight:600; font-size:clamp(20px,5vw,25px); color:#243534; letter-spacing:.01em;">Kari England</div>
+      <div style="font-size:clamp(8px,2vw,10px); font-weight:600; letter-spacing:.3em; color:#5E8C99; margin-top:2px;">NANTUCKET</div>
+    </a>
+    <nav class="ke-nav-links" style="display:flex; align-items:center; gap:32px; font-size:14px; font-weight:500;">
+      <a class="ke-navlink" href="#collection">Collection</a>
+      <a class="ke-navlink" href="#studio">The Studio</a>
+      <a class="ke-navlink" href="#visit">Visit</a>
+    </nav>
+    <a href="https://www.instagram.com/karienglandnantucket" style="display:flex; align-items:center; gap:7px; flex-shrink:0; background:#243534; color:#fff; font-size:13px; font-weight:600; text-decoration:none; padding:9px 16px; border-radius:999px;">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"/></svg>
+      Follow
+    </a>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section id="top" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr)); align-items:stretch;">
+    <div style="padding:clamp(48px,8vw,84px) clamp(24px,5vw,56px); display:flex; flex-direction:column; justify-content:center;">
+      <div style="font-size:clamp(11px,2.6vw,12px); font-weight:600; letter-spacing:.22em; color:#5E8C99; text-transform:uppercase; margin-bottom:22px;">Hand-loomed on the island</div>
+      <h1 style="font-family:'Cormorant Garamond',serif; font-weight:500; font-size:clamp(44px,11vw,76px); line-height:1.0; color:#243534; margin:0 0 22px; letter-spacing:-.01em;">Brilliant color, woven by hand.</h1>
+      <p style="font-size:clamp(15px,4vw,17px); line-height:1.65; color:#6B7674; margin:0 0 32px; max-width:440px;">Linen and silk knitwear made in vivid, sun-soaked hues, created one piece at a time in a small studio steps from the harbor.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:12px;">
+        <a class="ke-btn-primary" href="#visit" style="background:#DD6A4E; color:#fff; font-size:15px; font-weight:600; padding:15px 28px; border-radius:2px; text-decoration:none;">Visit the Shop</a>
+        <a class="ke-btn-ghost" href="https://www.instagram.com/karienglandnantucket" style="color:#243534; font-size:15px; font-weight:600; padding:15px 26px; border-radius:2px; text-decoration:none; border:1px solid rgba(36,53,52,.2); transition:background .2s;">Follow on Instagram</a>
+      </div>
+    </div>
+    <div style="min-height:clamp(360px,80vw,600px);">
+      <img class="ke-img" src="images/hero-bench.jpg" alt="A woman in a coral Kari England knit and dip-dyed skirt on a weathered bench by the shop">
+    </div>
+  </section>
+
+  <!-- ===== COLLECTION ===== -->
+  <section id="collection" style="padding:clamp(48px,8vw,80px) clamp(24px,5vw,56px); border-top:1px solid rgba(36,53,52,.08);">
+    <div style="display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:16px; margin-bottom:clamp(28px,5vw,38px);">
+      <div>
+        <div style="font-size:clamp(11px,2.6vw,12px); font-weight:600; letter-spacing:.22em; color:#5E8C99; text-transform:uppercase; margin-bottom:12px;">The Collection</div>
+        <h2 style="font-family:'Cormorant Garamond',serif; font-weight:500; font-size:clamp(30px,7vw,44px); line-height:1; color:#243534; margin:0;">Pieces for harbor light</h2>
+      </div>
+      <a class="ke-navlink" href="https://www.instagram.com/karienglandnantucket" style="font-size:14px; font-weight:600; color:#5E8C99; text-decoration:none;">See more on Instagram →</a>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr)); gap:clamp(16px,3vw,22px);">
+      <div>
+        <div class="ke-card-img" style="width:100%; height:clamp(340px,90vw,420px); overflow:hidden;"><img class="ke-img" src="images/linen-shirtdress.jpg" alt="A rack of hand-dyed linen shirtdresses in every pastel shade"></div>
+        <div style="font-family:'Cormorant Garamond',serif; font-size:21px; color:#243534; margin-top:14px;">The Linen Shirtdress</div>
+        <div style="font-size:13px; color:#8A938F; margin-top:3px;">Hand-dyed, every shade</div>
+      </div>
+      <div>
+        <div class="ke-card-img" style="width:100%; height:clamp(340px,90vw,420px); overflow:hidden;"><img class="ke-img" src="images/silk-peony.jpg" alt="Washed silk pieces in lime green and sand draped beside white peonies"></div>
+        <div style="font-family:'Cormorant Garamond',serif; font-size:21px; color:#243534; margin-top:14px;">Washed Silk</div>
+        <div style="font-size:13px; color:#8A938F; margin-top:3px;">Slips, wraps &amp; bias cuts</div>
+      </div>
+      <div>
+        <div class="ke-card-img" style="width:100%; height:clamp(340px,90vw,420px); overflow:hidden;"><img class="ke-img" src="images/evening.jpg" alt="Three women in floor-length knit gowns at sunset on the water"></div>
+        <div style="font-family:'Cormorant Garamond',serif; font-size:21px; color:#243534; margin-top:14px;">Knit Eveningwear</div>
+        <div style="font-size:13px; color:#8A938F; margin-top:3px;">Made to turn heads</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STUDIO ===== -->
+  <section id="studio" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr)); background:#F2EEE3;">
+    <div style="min-height:clamp(320px,80vw,480px);">
+      <img class="ke-img" src="images/kari.jpg" alt="Kari England laughing in her shop, a tape measure around her neck">
+    </div>
+    <div style="padding:clamp(48px,8vw,80px) clamp(24px,5vw,60px); display:flex; flex-direction:column; justify-content:center;">
+      <div style="font-size:clamp(11px,2.6vw,12px); font-weight:600; letter-spacing:.22em; color:#5E8C99; text-transform:uppercase; margin-bottom:20px;">The Studio</div>
+      <h2 style="font-family:'Cormorant Garamond',serif; font-weight:500; font-size:clamp(30px,7vw,40px); line-height:1.08; color:#243534; margin:0 0 22px;">Hand-loomed in America</h2>
+      <p style="font-size:clamp(15px,4vw,16px); line-height:1.75; color:#6B7674; margin:0 0 16px;">Every Kari England piece is loom-knit by hand right here in America, in natural linen and silk and hand-dyed in vivid, sun-soaked color. No overseas factories, no two quite alike.</p>
+      <p style="font-size:clamp(15px,4vw,16px); line-height:1.75; color:#6B7674; margin:0;">Stop into the studio on Old South Wharf to see the new season in person and find your color.</p>
+    </div>
+  </section>
+
+  <!-- ===== VISIT ===== -->
+  <section id="visit" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr)); background:#5E8C99; color:#fff;">
+    <div style="min-height:clamp(360px,85vw,560px); order:0;">
+      <img class="ke-img" src="images/shopfront.jpg" alt="The ivy-covered Kari England shopfront at 11 Old South Wharf, Nantucket">
+    </div>
+    <div style="padding:clamp(48px,8vw,80px) clamp(24px,5vw,60px); display:flex; flex-direction:column; justify-content:center;">
+      <div style="font-size:clamp(11px,2.6vw,12px); font-weight:600; letter-spacing:.22em; color:#CFE3E7; text-transform:uppercase; margin-bottom:20px;">Visit the Shop</div>
+      <h2 style="font-family:'Cormorant Garamond',serif; font-weight:500; font-size:clamp(30px,7vw,42px); line-height:1.05; margin:0 0 24px;">Find us on the Wharf</h2>
+      <div style="font-size:clamp(16px,4vw,17px); line-height:1.6;">11 Old South Wharf</div>
+      <div style="font-size:clamp(16px,4vw,17px); line-height:1.6; color:#D6E6E9; margin-bottom:22px;">Nantucket, Massachusetts</div>
+      <div style="font-size:14px; line-height:1.9; color:#D6E6E9; border-top:1px solid rgba(255,255,255,.2); padding-top:20px; max-width:320px;">Open daily in season · 10am – 6pm<br>Seasonal hours. Message us on Instagram before you visit.</div>
+      <a href="https://www.instagram.com/karienglandnantucket" style="display:inline-flex; align-items:center; gap:9px; color:#fff; text-decoration:none; font-size:14px; font-weight:600; margin-top:24px;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"/></svg>
+        @karienglandnantucket
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== EMAIL ===== -->
+  <section style="padding:clamp(48px,8vw,72px) clamp(24px,5vw,60px); background:#4E7B87; color:#fff; display:flex; flex-direction:column; align-items:center; text-align:center;">
+    <h3 style="font-family:'Cormorant Garamond',serif; font-weight:500; font-size:clamp(28px,6vw,34px); line-height:1.1; margin:0 0 12px;">First to the new colors</h3>
+    <p style="font-size:15px; line-height:1.6; color:#E2EDEF; margin:0 0 26px; max-width:420px;">Join the list for new arrivals, trunk shows, and island pop-ups.</p>
+    <div style="display:flex; flex-wrap:wrap; gap:10px; width:100%; max-width:440px;">
+      <input type="email" placeholder="Your email" style="flex:1 1 200px; min-width:0; background:rgba(255,255,255,.96); border:0; border-radius:2px; padding:15px 16px; font-family:'Hanken Grotesk',sans-serif; font-size:15px; color:#243534; outline:none;">
+      <button class="ke-btn-primary" style="background:#DD6A4E; color:#fff; border:0; font-family:'Hanken Grotesk',sans-serif; font-size:15px; font-weight:600; padding:15px 28px; border-radius:2px; cursor:pointer; white-space:nowrap;">Join</button>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer style="padding:32px clamp(24px,5vw,56px); display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px; background:#243534; color:#A9B6B4;">
+    <div style="font-family:'Cormorant Garamond',serif; font-size:19px; color:#F2EEE3;">Kari England <span style="color:#7BA6B0;">Nantucket</span></div>
+    <div style="font-size:12px; letter-spacing:.04em;">© 2026 · Made by hand on Nantucket</div>
+  </footer>
+
+</div>
+</x-dc>
+</body>
+</html>
